@@ -1,0 +1,40 @@
+{
+    "name": "LLM-QAbot",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "chatllm",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.rulers": [
+                    88
+                ],
+                "[python]": {
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": true
+                    }
+                },
+                "python.linting.pylintEnabled": false,
+                "python.linting.flake8Enabled": true,
+                "python.formatting.provider": "black",
+                "isort.args": [
+                    "--profile",
+                    "black"
+                ],
+                "python.linting.flake8Args": [
+                    "--max-line-length",
+                    "88",
+                    "--extend-ignore",
+                    "E203"
+                ]
+            },
+            "extensions": [
+                "eamodio.gitlens",
+                "github.copilot",
+                "ms-toolsai.jupyter"
+            ]
+            
+        }
+    }
+}
